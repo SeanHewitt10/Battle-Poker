@@ -1,2 +1,2 @@
 # Battle-Poker
-Battle Poker personal project for portfolio use
+Battle Poker is a personal project I am working on for my portfolio. More to come soon.
