@@ -1,0 +1,289 @@
+div{
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  li {
+    display: inline-block;
+  }
+  
+  input[type="checkbox"][id^="cb"] {
+    display: none;
+  }
+  
+  label {
+    
+    padding: 0px;
+    display: block;
+    position: relative;
+    margin: 0px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  label::before {
+    background-color: white;
+    color: white;
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 28px;
+    transition-duration: 0.4s;
+    transform: scale(0);
+  }
+  
+  label img:not(.potsimg) {
+    height: 150px;
+    width: 112px;
+    transition-duration: 0.1s;
+    transform-origin: 50% 50%;
+    border-radius: 9%;
+  }
+  
+  :hover + label img:not(.potsimg){
+    border: 3px solid rgb(150, 32, 32);
+  }
+  
+  
+  :checked + label img:not(.potsimg) {
+    transform: scale(1.2);
+    transform: translate(0%, -50%);
+    z-index: -1;
+    border: 3px solid rgb(255, 255, 255);
+  }
+  
+#bosspic{
+  position: relative;
+  display: flex;
+  height: 200px;
+  width: 150px;
+  float:left;
+  top: 30px;
+  border-radius: 9%;
+}
+
+.buttons{
+    background: #247ed3;
+      padding: 1rem 1rem;
+      border-radius: 0.5rem;
+      border: 2px, solid, #000;
+      font-family: 'Public Pixel', sans-serif;
+      color: black;
+      font-weight: bold;
+      cursor : pointer;
+      
+  }
+
+.buttons2{
+    background-color: #b95d5d;
+  }
+  
+body {
+      height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font: 900 24px/1.4 -system-ui, sans-serif;
+      font-family: 'Public Pixel', sans-serif;
+      color: white;
+      text-shadow: 5px 0 0 #000, 0 -5px 0 #000, 0 5px 0 #000, -5px 0 0 #000;
+      overflow-y: hidden;
+  }
+  
+  .boss{
+    height: 300px;
+    
+  }
+
+  h2{
+    font-size: 60px;
+    margin-top: 80px;
+  }
+
+
+  .splash{
+    cursor : pointer;
+    position : fixed;
+    object-fit: fill;
+    top : 50%;
+    left : 49.5%;
+    height : 1500px;
+    width : 1536px;
+    transform : translate(-50%,-50%);
+    background-image:url(Title1.jpeg);    
+    background-color: rgba(0,0,0);
+    transition : all ease-in-out 600ms;
+    z-index: 100;
+    border: 10px solid black;
+  }
+  .hidden{
+    transition : 0.5s;
+    display : none;
+  }
+  .splash-header {
+    height : 140%;
+    color : white;
+    font-family : 'Public Pixel', sans-serif ;
+    font-size : 60px;
+    display : flex;
+    justify-content: center;
+    align-items : center;
+    text-shadow: 5px 0 0 #000, 0 -5px 0 #000, 0 5px 0 #000, -5px 0 0 #000;
+  }
+
+  .gamebox{
+    position: relative;
+    background-image: url(board3.png);
+    height: 950px;
+    width: 1530px;
+    border: 8px solid rgb(177, 153, 19);
+    outline: 3px solid black;
+    top:-10px;
+  }
+
+  .splash2{
+    cursor : pointer;
+    position : fixed;
+    top : 50%;
+    left : 49.5%;
+    height : 1536px;
+    width : 1536px;
+    transform : translate(-50%,-50%);
+    background-image:url(rules.jpeg);    
+    background-color: rgba(0,0,0);
+    transition : all ease-in-out 600ms;
+    z-index: 1;
+    border: 10px solid black;
+  }
+
+  .splash-header2 {
+    height : 40%;
+    color : white;
+    font-family : 'Public Pixel', sans-serif ;
+    font-size : 55px;
+    display : flex;
+    justify-content: center;
+    align-items : center;
+    text-shadow: 5px 0 0 #000, 0 -5px 0 #000, 0 5px 0 #000, -5px 0 0 #000;
+  }
+
+  .p2{
+    font-size : 25px;
+    position: relative;
+    top: -250px;
+    text-align: left;
+    margin-left: 25px;
+  }
+
+  .p7{
+    text-align: center;
+    font-size: 35px;
+  }
+
+  .btnbox{
+    position: relative;
+    top: -25px;
+  }
+
+  button:hover {
+color: white;
+  }
+
+.bossinfo {
+    position: relative;
+    top: -180px;
+    
+  }
+
+
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 8% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 4px solid #776d16;
+    width: 50%;
+    background-image: url(damage.jpeg);
+    background-size: 100% 100%;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0);
+    animation-name: appear;
+    animation-duration: 0.4s
+  }
+
+  .close{
+    background: #05681e;
+      padding: 1rem 1rem;
+      border-radius: 0.5rem;
+      border: 2px, solid, #000;
+      font-family: 'Public Pixel', sans-serif;
+      color: black;
+      font-weight: bold;
+      cursor : pointer;
+  }
+
+  .radio_item{
+    display: none;
+  }
+
+  .label_item{
+    display: inline-block;
+    padding: 30px;
+    height: 120px;
+    width: 120px;
+    
+  }
+
+  .pots{
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Public Pixel', sans-serif;
+    text-shadow: none;
+    color: #ffffff;
+    padding: 8px;
+  }
+
+.potsimg{
+  display: inline-block;
+    height: 120px;
+    width: 120px;
+}
+
+.potsimg:hover{
+  border: 3px solid black;
+}
+
+.radio_item:checked + label img{
+  border: 5px solid rgb(255, 255, 255);
+}
+
+  @keyframes appear {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  }

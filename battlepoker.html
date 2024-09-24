@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./CSS BP.css">
+    <link href="https://fonts.cdnfonts.com/css/public-pixel" rel="stylesheet">
+    <title>Poker Battle</title>
+  </head>
+  <body>
+  
+  
+  <div class="gamebox" id="gamebox">
+
+    <h2>
+      Poker Battle
+      </h2>
+  <div class="bossinfo">
+    <img id="bosspic" src="soldier.png"/>
+  <h3 id="bossname">Boss Name:</h3>
+  
+  <h4 id="bosshealth">Boss Health:</h4>
+</div>
+
+  <div class="boss">
+  </div>
+  
+  <ul>
+  <li><input name="check[]" type="checkbox" id="cb0" />
+    <label for="cb0"><img class="A" id="0" src="" /></label>
+  </li>
+  <li><input name="check[]" type="checkbox" id="cb1" />
+    <label for="cb1"><img class="A" id="1" src="" /></label>
+  </li>
+  <li><input name="check[]" type="checkbox" id="cb2" />
+    <label for="cb2"><img class="A" id="2" src="" /></label>
+  </li>
+  <li><input name="check[]" type="checkbox" id="cb3" />
+    <label for="cb3"><img class="A" id="3" src="" /></label>
+  </li>
+  <li><input name="check[]" type="checkbox" id="cb4" />
+    <label for="cb4"><img class="A" id="4" src="" /></label>
+  </li>
+  <li><input name="check[]" type="checkbox" id="cb5" />
+    <label for="cb5"><img class="A" id="5" src="" /></label>
+  </li>
+  <li><input name="check[]" type="checkbox" id="cb6" />
+    <label for="cb6"><img class="A" id="6" src="" /></label>
+  </li>
+  <li><input name="check[]" type="checkbox" id="cb7" />
+    <label for="cb7"><img class="A" id="7" src="" /></label>
+  </li>
+</ul>
+
+<div>
+  <label id="discardcount"></label>
+  <label id="handcount"></label>
+  <label id="multi"></label>
+  </div>
+
+
+<div class="btnbox">
+<button class="buttons" type="submit" onclick="submit()">
+Play Hand
+</button>
+
+
+<button class="buttons buttons2" onclick="discard()">
+Discard
+</button>
+</div>
+
+
+</div>
+
+
+<!-- Title Screen code starts here  -->
+<div class="splash">
+  <p class = "splash-header">Click anywhere to begin</p>
+</div>
+  <!-- Title Screen code ends here  -->
+
+  <!-- Rules Screen code starts here  -->
+<div class="splash2">
+  <p class = "splash-header2">Rules of the game</p>
+  <p class="p2">- Play poker hands to deal damage to the boss.</p>
+  <p class="p2" >- Damage is calculated based on the value of the cards played and the poker hand. The better the poker hand played the more damage dealt.</p>
+  <p class="p2" >- Discard or play cards from your hand to search for better cards from the deck.</p>
+  <p class="p2" >- But be careful. You have a limited number of discards and hands to be played.</p>
+  <p class="p2" >- Deal enough damage to bring the boss health to zero. Once the boss health reaches zero you can choose one power up before moving on to the next boss. Dont worry, your hands and discards will be reset and the deck will be reshuffled.</p>
+  <p class="p2" >- Defeat all of the bosses to win the game! Good Luck!</p>
+  <p class= "p2 p7">Click anywhere to begin!</p>
+</div>
+  <!-- Rules Screen code ends here  -->
+
+
+<!-- Modal for damage -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <p id="damage" class="damage"></p>
+      <button class="close">Continue</button>
+    </div>
+  
+</div>
+
+
+
+<!-- Modal for discards -->
+<div id="myModal1" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p><br></p>
+    <p id="discardM" class="discardM"></p>
+    <p><br></p>
+    <button class="close">Close</button>
+  </div>
+
+</div>
+
+
+<!-- Modal for power ups -->
+<div id="myModal2" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+
+<p id="beat"></p>
+
+
+<!--RADIO 1-->
+<input type="radio" checked class="radio_item" value="" name="item" id="radio1">
+<label class="label_item" for="radio1"> <img class="potsimg" src="potion1.png"> </label>
+
+
+<!--RADIO 2-->
+<input type="radio" class="radio_item" value="" name="item" id="radio2">
+<label class="label_item" for="radio2"> <img class="potsimg" src="potion2.png"> </label>
+
+
+<!--RADIO 3-->
+<input type="radio" class="radio_item" value="" name="item" id="radio3">
+<label class="label_item" for="radio3"> <img class="potsimg" src="potion3.png"> </label>
+<br>
+
+<div><p class="pots">Discard<br> Potion<br>+1 Discard</p>
+  <p class="pots">Hand<br> Potion<br>+1 Hand</p>
+  <p class="pots">Multiplier<br> Potion<br>+1 Multiplier</p>
+</div>
+
+
+    <p id="powwer" class="power">Select a Power Up Potion!</p>
+    <button class="close">Select</button>
+  </div>
+
+</div>
+
+
+<!-- Modal for lose -->
+<div id="myModal3" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p><br></p>
+    <p id = loser2></p>
+    <p id = loser><br></p>
+    <p id="lose" class="lose">You were not able to defeat the boss. Better luck next time!</p>
+    <button class="close">Try Again</button>
+  </div>
+
+</div>
+
+
+
+<!-- Modal for win -->
+<div id="myModal4" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p><br></p>
+    <p id = loser>You have defeated the final boss and won the game! Well done!<br></p>
+    <p><br></p>
+    <button class="close">Play Again</button>
+  </div>
+
+</div>
+
+
+<script src="./JS BP.js"></script>
+
+</body>
+</html>
